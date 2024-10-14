@@ -178,6 +178,17 @@ push "&lt;change-folder&gt;pops://$my_username:$my_password@kdlp.underground.sof
     * Before running it, you should check back in on the updates running in `tty1`. Press `ctrl+alt+f1` and make sure that the update command is done and you are back in a shell.
     * If it is finished, switch back to tty2 (`ctrl+alt+f2`) and run the poweroff command.
 
+* The current setup needs to download your email every time you open mutt. To make it faster for you & easier on our mail server, you can cache email. Add these to your muttrc:
+<pre><code>
+set header_cache=~/.cache/mutt/headers
+set message_cachedir=~/.cache/mutt/bodies
+set certificate_file=~/.cache/mutt/certificates
+</code></pre>
+* We also have to create the directories, run these commands in bash.
+<pre><code>
+mkdir -p ~/.cache/mutt/headers
+mkdir -p ~/.cache/mutt/bodies
+</code></pre>
 #### Optional VM Configuration
 
 * Set up SSH access:
